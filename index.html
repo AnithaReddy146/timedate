@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="body">
+    <div class="container"></div>
+    <li class="hrs">00hrs</li>
+    <li>:</li>
+    <li class="mins">00mins</li>
+    <li>:</li>
+    <li class="secs">00secs</li>
+    <script>
+        let body=document.getElementsByClassName("body")[0]
+        body.style.listStyle="none"
+        body.style.display="flex";
+        body.style.justifyContent="center";
+        body.style.alignItems="center";
+        body.style.height="100vh";
+        let container=document.getElementsByClassName("container")[0]
+        container.style.display="flex";
+        container.style.gap="50px";
+        container.style.fontSize="100px";
+        setInterval(()=>{
+        let hrs=document.getElementsByClassName("hrs")[0];
+        let mins=document.getElementsByClassName("mins")[0];
+        let secs=document.getElementsByClassName("secs")[0];
+        hrs.style.color="red";
+        mins.style.color="blue";
+        secs.style.color="green";
+        let date=new Date();
+        let hours=date.getHours();
+        let minutes=date.getMinutes();
+        let seconds=date.getSeconds();
+        hrs.innerText=hours;
+        mins.innerText=minutes;
+        secs.innerText=seconds;
+        },1000)
+    </script>
+</body>
+</html>
